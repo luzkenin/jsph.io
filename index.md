@@ -2,7 +2,13 @@
 
 If your environment is offline, i.e. totally disconnected from the internet, it can be tough to update things. I've dealt with this with WSUS, SCCM, and now VMware Tools. Let's make it easy.
 
+
 ### The Hard Way
+
+I really need to thank Chrissy LeMaire ([Twitter](https://twitter.com/cl), [Github](https://github.com/potatoqualitee)) for encouraging me to create this blog and honestly so many other things.
+
+### What to expect
+
 
 Updating Tools on the ESXi host required uploading to the datastore, chmodding, some esxcli commands, and setting up symlinks[^1]. While this is fine, it is a few more steps than I would like.
 
