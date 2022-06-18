@@ -2,15 +2,9 @@
 
 If your environment is offline, i.e. totally disconnected from the internet, it can be tough to update things. I've dealt with this with WSUS, SCCM, and now VMware Tools. Let's make it easy.
 
-
 ### The Hard Way
 
-I really need to thank Chrissy LeMaire ([Twitter](https://twitter.com/cl), [Github](https://github.com/potatoqualitee)) for encouraging me to create this blog and honestly so many other things.
-
-### What to expect
-
-
-Updating Tools on the ESXi host required uploading to the datastore, chmodding, some esxcli commands, and setting up symlinks[^1]. While this is fine, it is a few more steps than I would like.
+Updating Tools on the ESXi host required uploading to the datastore, chmodding, some esxcli commands, and setting up symlinks([Installing and upgrading the latest version of VMware Tools on existing hosts (2129825)](https://kb.vmware.com/s/article/2129825)). While this is fine, it is a few more steps than I would like.
 
 ### The New Way
 
@@ -82,8 +76,6 @@ Now your VMs should be showing that a newer version of Vmware Tools is available
 ### That's it!
 
 In the next post I will go over how you can globaly configure VMware Tools to pull from the repo and install automatically.
-
-[^1]: [Installing and upgrading the latest version of VMware Tools on existing hosts (2129825)](https://kb.vmware.com/s/article/2129825)
 
 ## Frist Post!
 
