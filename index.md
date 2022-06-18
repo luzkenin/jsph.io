@@ -65,11 +65,17 @@ esxcli system settings gueststore repository get
 
 Download the VMware Tools packages for GuestStore ZIP from [Download VMware Tools](https://customerconnect.vmware.com/en/downloads/details?downloadGroup=VMTOOLS1205&productId=1259&rPId=88838). Unzip it and then upload the vmware directory to the GuestStore directory you created on the datastore.
 
+![vmware directory](/assets/images/vmwaredir.png)
+
 #### Updating VMware Tools
 
 Now your VMs should be showing that a newer version of Vmware Tools is available to install.
 
 ![Update Available](/assets/images/updateavail.png)
+
+### That's it!
+
+In the next post I will go over how you can globaly configure VMware Tools to pull from the repo and install automatically.
 
 [^1]: [Installing and upgrading the latest version of VMware Tools on existing hosts (2129825)](https://kb.vmware.com/s/article/2129825)
 
