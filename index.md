@@ -1,3 +1,9 @@
+## vSphere GuestStore: An easy way to update VMware Tools
+
+### The Hard Way
+
+### The New Way
+
 ## Frist Post!
 
 Ok if you understand the title of this post you are officially old. Welcome to this blog. It will probably die. But I will try to post the things I learn so I can share the knowledge and hopefully people searching for weird niche issues can find solutions.
