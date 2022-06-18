@@ -2,7 +2,60 @@
 
 ### The Hard Way
 
+Updating Tools on the ESXi host required uploading to the datastore, chmodding, some esxcli commands, and setting up symlinks[^1]. While this is fine, it is a few more steps than I would like.
+
 ### The New Way
+
+Enter GuestStore. From VMware:
+
+> The GuestStore feature provides a simple and flexible mechanism to distribute VMware specific or custom content from a GuestStore repository to multiple guests simultaneously.
+
+Enabling the GuestStore feature makes it easier to update VMware Tools on your VMs. You can also use it for other purposes like distributing scripts or configuration files.
+
+#### How to setup GuestStore
+
+Creating the GuestStore is simple and only requires a few steps.
+
+- Create the folder on the datastore
+- Use esxcli to set the repository URL
+
+##### Create the GuestStore directory
+
+In your datastore create a directory called "GuestStore"
+
+![GuestStore](/assets/images/gdirectory.png)
+
+#### Configure the repo
+
+SSH to your host. You may need to enable SSH first. 
+
+First find the UUID of your datastore:
+
+```
+esxcli storage filesystem list
+```
+
+Then run this command:
+
+```
+esxcli system settings gueststore repository set --url "ds:///vmfs/volumes/<datastore_uuid>/GuestStore"
+```
+
+Ensure that it was successfully set:
+
+```
+esxcli system settings gueststore repository get
+```
+
+#### Upload the latest VMware Tools
+
+Download the VMware Tools packages for GuestStore ZIP from [Download VMware Tools](https://customerconnect.vmware.com/en/downloads/details?downloadGroup=VMTOOLS1205&productId=1259&rPId=88838). Unzip it and then upload the vmware directory to the GuestStore directory you created on the datastore.
+
+### Other Ways
+
+SCCM
+
+[^1]: [Installing and upgrading the latest version of VMware Tools on existing hosts (2129825)](https://kb.vmware.com/s/article/2129825)
 
 ## Frist Post!
 
