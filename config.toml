@@ -2,7 +2,7 @@ baseURL = 'https://blog.jsph.io/'
 languageCode = 'en-us'
 title = 'blog.jsph.io'
 paginate = "10" # Number of posts per page
-theme = "clarity"
+theme = "hugo-clarity"
 
 [Author] # Used in authorbox
   name = "Joseph Warren"
